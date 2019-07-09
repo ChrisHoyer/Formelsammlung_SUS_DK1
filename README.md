@@ -12,4 +12,5 @@ Du hast Verbesserungen, Anmerkungen oder Ergänzungen zu diesem Skript? Dann wir
 
 - Übersichtlichkeit / Layout
 - z-Transformation / Laplace Transformation
+- Tikz Grafiken in Inkscape svn/eps
 - Englische Übersetzung?
