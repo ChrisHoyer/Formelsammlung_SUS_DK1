@@ -1,0 +1,90 @@
+%======================================== Vereinbarung ====================================================
+% Alle Versionen (ausgedruckt sowie digital) und Änderungen dieses Skripts müssen öffentlich zugänglich 
+% sein. Das Skript darf nicht kommerziell verkauft werden. Der Verweiß auf alle mitgewirkten Autoren, sowie 
+% der Link zum entsprechenden Github Repository darf nicht entfernt werden. Jegliche Anmerkungen/Ergänzungen 
+% sowie Erweiterungen sind ausdrücklich erlaubt.
+
+% Fachliche Ergänzungen sind erwünscht. Jedoch wird keine Richtigkeit garantiert!
+
+%=======================================================================================================
+
+\documentclass[8pt,landscape]{scrartcl}										% Papierformat und Punktgröße
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,landscape]{geometry}
+
+\usepackage[utf8]{inputenc}													% wegen deutschen Umlauten
+\usepackage[ngerman]{babel}													% deutsche Silbentrennung
+\usepackage{multicol}							%Mehrspaltig
+\usepackage{amsmath}														% Mathematische Formeln
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{dsfont}
+\usepackage{calc}
+\usepackage[permil]{overpic} 
+\usepackage{graphicx}
+\usepackage{listings}														% Quellcode einbinden
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,intersections}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{trfsigns}		%Laplace
+
+\usepackage[T2A,T1]{fontenc}%Laden der verwendeten Fontkodierungen
+%voreingestellt ist die zuletzt geladene Kodierung, hier also T1 
+\newcommand\SHT{\fontencoding{T2A}\selectfont \char216}
+%======================================== Plotinfos ====================================================
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.6}
+\pgfplotsset{soldot/.style={color=blue,only marks,mark=*}}
+\pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}}
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
+\usetikzlibrary{patterns}
+\tikzstyle{dim}    = [latex-latex]
+\usetikzlibrary{shapes,snakes}
+
+\usetikzlibrary{dsp,chains}
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\z}{\mathpzc{z}}
+
+\DeclareMathSizes{10}{10}{10}{10}
+
+\usepackage{electComp}
+\usetikzlibrary{decorations,decorations.pathmorphing,decorations.pathreplacing}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(sqrt(#2*2*pi))*exp(-((x-#1)^2)/(2*#2))}%
+}
+
+
+%======================================== Dokumentinfos ====================================================
+\author{Christian Hoyer}
+\lhead{\textbf{Formelsammlung Signal- und Systemtheorie}}
+\chead{\thepage}
+\rhead{Christian Hoyer - Sommersemester 2015 - Version 1.2}
+\cfoot{\raisebox{0.5cm}[0pt][0pt]{Du kannst bei diesem Skript mitwirken! github.com/ChrisHoyer/Formelsammlung\_SUS\_DK1}}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\begin{document}
+%================================================== Deckblatt ==============================================
+\tableofcontents
+\newpage
+%========================================== der ersten Spalte ==============================================
+\setlength{\columnsep}{1cm}
+\begin{multicols}{2}
+\flushleft
+
+% Inhalt in seperater Datei
+\input{part1}
+
+\input{part2}
+
+\end{multicols}
+\end{document}
